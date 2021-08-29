@@ -3,6 +3,6 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .red {
-    color: hsl(0, 74%, 56%);
+    color: #e23c3c;
     vertical-align: middle;
 }
