@@ -47,17 +47,23 @@ export class ProductService {
   }
 
   errorHandle(e: any): Observable<any> {
-    this.showMessage('Ocorreu um erro ao salvar os dados', true);
+    this.showMessage('Ocorreu um erro', true);
     return EMPTY;
   }
 
   read(): Observable<Product[]> {
-    return this.http.get<Product[]>(this.baseUrl);
+    return this.http.get<Product[]>(this.baseUrl).pipe(
+      map(obj => obj),
+      catchError(e => this.errorHandle(e))
+    );
   }
 
   readById(id: string): Observable<Product> {
     const urlQuery = `${this.baseUrl}/${id}`;
-    return this.http.get<Product>(urlQuery);
+    return this.http.get<Product>(urlQuery).pipe(
+      map(obj => obj),
+      catchError(e => this.errorHandle(e))
+    );
   }
 
   update(product: Product): Observable<Product> {
@@ -67,6 +73,9 @@ export class ProductService {
 
   delete(product: Product): Observable<Product> {
     const urlQuery = `${this.baseUrl}/${product.id}`;
-    return this.http.delete<Product>(urlQuery);
+    return this.http.delete<Product>(urlQuery).pipe(
+      map(obj => obj),
+      catchError(e => this.errorHandle(e))
+    );
   }
 }
