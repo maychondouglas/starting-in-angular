@@ -36,6 +36,11 @@ import localePt from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
 import { ProductUpdateComponent } from './components/product/product-update/product-update.component';
 import { ProductDeleteComponent } from './components/product/product-delete/product-delete.component';
+import { MyDashboardComponent } from './views/my-dashboard/my-dashboard.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
+import { LayoutModule } from '@angular/cdk/layout';
 registerLocaleData(localePt);
 
 @NgModule({
@@ -55,7 +60,8 @@ registerLocaleData(localePt);
     ProductReadComponent,
     ProductReadTableComponent,
     ProductUpdateComponent,
-    ProductDeleteComponent
+    ProductDeleteComponent,
+    MyDashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -73,7 +79,11 @@ registerLocaleData(localePt);
     MatInputModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule    
+    MatSortModule,
+    MatGridListModule,
+    MatMenuModule,
+    MatIconModule,
+    LayoutModule    
   ],
   providers: [
     {

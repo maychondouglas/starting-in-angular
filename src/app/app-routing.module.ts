@@ -1,7 +1,8 @@
+import { MyDashboardComponent } from './views/my-dashboard/my-dashboard.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { HomeComponent } from './views/home/home.component'
+import { HomeComponent } from './views/home/home.component';
 import { ProductCreateComponent } from './components/product/product-create/product-create.component'
 import { ProductCrudComponent } from './views/product-crud/product-crud.component'
 import { ProductUpdateComponent } from './components/product/product-update/product-update.component';
@@ -27,6 +28,10 @@ const routes: Routes = [
     {
         path: "products/delete/:id",
         component:  ProductDeleteComponent
+    },
+    {
+        path: "dashboard",
+        component:  MyDashboardComponent
     }
     
 ];
