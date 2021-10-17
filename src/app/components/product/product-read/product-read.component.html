@@ -2,8 +2,8 @@
     <table mat-table [dataSource]="dataSource">
         <!-- Id Column -->
         <ng-container matColumnDef="id">
-            <th mat-header-cell *matHeaderCellDef>Id</th>
-            <td mat-cell *matCellDef="let row">{{row.id}}</td>
+            <th style="text-align: center;" mat-header-cell *matHeaderCellDef>Id</th>
+            <td style="text-align: center;" mat-cell *matCellDef="let row">{{row.id}}</td>
         </ng-container>
 
         <!-- Name Column -->
@@ -14,19 +14,22 @@
 
         <!-- Price Column -->
         <ng-container matColumnDef="price">
-            <th mat-header-cell *matHeaderCellDef>Price</th>
-            <td mat-cell *matCellDef="let row"> {{ row.price | currency: 'BRL' }}</td>
+            <th style="text-align: center;" mat-header-cell *matHeaderCellDef>Price</th>
+            <td style="text-align: center;" mat-cell *matCellDef="let row"> {{ row.price | currency: 'BRL' }}</td>
         </ng-container>
 
         <!-- Action Column -->
         <ng-container matColumnDef="action">
-            <th mat-header-cell *matHeaderCellDef>Actions</th>
-            <td mat-cell *matCellDef="let row">
+            <th style="text-align: center;" mat-header-cell *matHeaderCellDef>Actions</th>
+            <td style="text-align: center;" mat-cell *matCellDef="let row">
                 <a routerLink="/products/update/{{row.id}}" class="edit">
                     <i class="material-icons">edit</i>
                 </a>
                 <a routerLink="/products/delete/{{row.id}}" class="delete">
                     <i class="material-icons">delete</i>
+                </a>
+                <a routerLink="/products/delete/{{row.id}}" class="delete">
+                    <app-my-icon [iconSlug]="'icon-1'" [color]="'#777'" [height]="'24px'" [width]="'24px'"></app-my-icon>
                 </a>
             </td>
         </ng-container>
@@ -43,12 +46,6 @@
         <button disabled="{{(pageIterador==pageArray.length - 1) ? 'true' : 'false'}}" mat-icon-button color="primary" (click)="getNextPage()" aria-label="Example icon button with a home icon">
           <mat-icon>arrow_forward</mat-icon>
         </button>
-        <!--         <button mat-icon-button color="primary" (click)="sortData('desc')" aria-label="Example icon button with a home icon">
-          <mat-icon>sort</mat-icon> Ordenar por ID
-        </button>
-        <button mat-icon-button color="primary" (click)="sortData('desc')" aria-label="Example icon button with a home icon">
-          <mat-icon>sort</mat-icon> Ordenar por ID
-        </button> -->
         <button mat-button (click)="sortData('desc')">
           <mat-icon>sort</mat-icon> Ordenar por ID
         </button>

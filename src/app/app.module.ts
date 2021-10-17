@@ -41,6 +41,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { LayoutModule } from '@angular/cdk/layout';
+import { MyIconComponent } from './components/my-icon/my-icon.component';
+import { SafeHtmlPipe } from './components/safe-html.pipe';
 registerLocaleData(localePt);
 
 @NgModule({
@@ -61,7 +63,9 @@ registerLocaleData(localePt);
     ProductReadTableComponent,
     ProductUpdateComponent,
     ProductDeleteComponent,
-    MyDashboardComponent
+    MyDashboardComponent,
+    MyIconComponent,
+    SafeHtmlPipe
   ],
   imports: [
     BrowserModule,
